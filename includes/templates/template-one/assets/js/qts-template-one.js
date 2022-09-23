@@ -208,7 +208,7 @@
 
                         if( response.data["data"].nonce_valid == true ) {
 
-                            if( response.data["data"].mail_status == false ) {
+                            if( response.data["data"].mail_status == true ) {
 
                                 $button.val("Submit");
                                 $(document).find('#qts-mail-form-wizzard  #message-fieldset').removeAttr("style");
