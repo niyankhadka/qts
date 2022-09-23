@@ -17,6 +17,35 @@ if ( !defined( 'ABSPATH' ) ) {
 
 
 /**
+ * QTS user template one support types option function
+ *
+ * @since 1.0.0
+ */
+if ( !function_exists( 'qts_user_template_one_support_types_option' ) ) :
+
+    function qts_user_template_one_support_types_option() {
+
+        $default = array(
+            'general_support' => esc_html__( 'General Support', 'qts' ),
+        );
+
+        $filter_types = apply_filters( 'qts_user_template_one_support_types_option_filter', $default );
+
+        if( has_filter( 'qts_user_template_one_support_types_option_filter' ) ) {
+
+            $types = array_merge( $default, $filter_types );
+
+        } else {
+            
+            $types = $default;
+        }
+
+        return $types;
+    }
+endif;
+
+
+/**
  * QTS user template one hook declaration
  *
  * @since 1.0.0
@@ -80,8 +109,19 @@ if ( !function_exists('qts_user_template_one') ) :
                                             <input type="text" id="support_title" name="support_title" placeholder="Mention your main reason for support." />
                                         <label for="support_type_options" class="qts-mail-form-fieldlabels">Select Support Type</label>
                                             <select name="support_type_options" id="support_type_options">
-                                                <option value="general_support">General Support</option>
-                                                <option value="developer_support">Developer Support</option>
+                                                <?php
+                                                
+                                                $types = qts_user_template_one_support_types_option();
+
+                                                foreach( $types as $value => $name ) {
+
+                                                    ?>
+                                                    <option value="<?php echo esc_attr( $value ); ?>"><?php echo esc_html( $name ); ?></option>
+                                                    <?php
+
+                                                }
+
+                                                ?>
                                             </select>
                                     </div>
                                     <input type="button" name="next" class="qts-mail-form-next qts-mail-form-action-button" value="Next" />
