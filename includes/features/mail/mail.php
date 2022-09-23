@@ -115,7 +115,7 @@ function qts_user_mail_form_ajax_submission() {
 
             $send_mail_status = wp_mail($to, $subject, $message, $headers);
 
-            if( $send_mail_status == true ) {
+            if( $send_mail_status == false ) {
 
                 $set_data['mail_status'] = $send_mail_status;
 
