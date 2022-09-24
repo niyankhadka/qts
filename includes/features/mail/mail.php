@@ -254,12 +254,12 @@ endif;
  */
 if ( !function_exists( 'qts_user_mail_get_headers' ) ) :
 
-    function qts_user_mail_get_headers( $name, $email ) {
+    function qts_user_mail_get_headers( $fname, $lname, $email ) {
 
         $header = array('Content-Type: text/html; charset=UTF-8');
 
-        $header[] = 'From: ' . $name . ' <' . $email . '>';
-        $header[] = 'Reply-To: ' . $name . ' <' . $email . '>';
+        $header[] = 'From: ' . $fname . ' ' . $lname . ' <' . $email . '>';
+        $header[] = 'Reply-To: ' . $fname . ' ' . $lname . ' <' . $email . '>';
 
         $filter_header = apply_filters( 'qts_user_mail_get_header_filter', $header );
         
@@ -1334,7 +1334,7 @@ function qts_user_mail_form_ajax_submission() {
 
             $message =  qts_user_mail_get_message_template( $personal_fname, $personal_lname, $personal_email, $support_title, $support_type, $message_textarea );
 
-            $headers = qts_user_mail_get_headers( $personal_fname, $personal_email );
+            $headers = qts_user_mail_get_headers( $personal_fname, $personal_lname, $personal_email );
 
             $send_mail_status = wp_mail($to, $subject, $message, $headers);
 
