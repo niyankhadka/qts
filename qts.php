@@ -23,6 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
+define( 'QTS_PLUGIN_NAME', 'Quick Theme Support' );
 define( 'QTS_PLUGIN_VERSION', '1.0.0' );
 define( 'QTS_PLUGIN_DIR', __DIR__);
 define( 'QTS_PLUGIN_FILE', __FILE__);
