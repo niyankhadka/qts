@@ -223,6 +223,8 @@
                                 });
                                 $(document).find('#qts-mail-form-wizzard #qts-mail-form-progressbar #confirm').addClass("active");
 
+                                $(document).find('#qts-mail-form-wizzard').trigger("reset");
+
                             }
 
                         }
@@ -285,7 +287,7 @@
 
         $("#qts-mail-form-wizzard .resend").click(function(){
 
-            //$('#qts-mail-form-wizzard').trigger("reset");
+            $('#qts-mail-form-wizzard').trigger("reset");
             //Remove class active
             $(document).find('#qts-mail-form-wizzard #qts-mail-form-progressbar #confirm').removeAttr("class");
             $(document).find('#qts-mail-form-wizzard #qts-mail-form-progressbar #message').removeAttr("class");
