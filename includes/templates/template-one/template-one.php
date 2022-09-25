@@ -72,6 +72,15 @@ if ( !function_exists('qts_user_template_one') ) :
             <a href="#" class="qts-1-menu-item red">
                 <i class="fa fa-heart"></i>
             </a>
+            <a href="#" class="qts-1-menu-item orange">
+                <i class="fa-solid fa-globe"></i>
+            </a>
+            <a href="#" class="qts-1-menu-item whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" class="qts-1-menu-item telegram">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
 
             <div class="qts-mail-popup qts-mail-js-popup" id="qts-mail-popup" data-popup="qts-mail-popup">
                 
