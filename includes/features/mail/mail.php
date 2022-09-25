@@ -1245,7 +1245,8 @@ if ( !function_exists( 'qts_user_mail_get_message_template' ) ) :
                                                                                                             <div style="color: #95a5a6; line-height: 140%; text-align: center; word-wrap: break-word;">
                                                                                                                 <p style="font-size: 14px; line-height: 140%;">
                                                                                                                     <span style="font-family: Rubik, sans-serif; font-size: 14px; line-height: 19.6px;">
-                                                                                                                        &copy; <?php echo date('Y') . " " . QTS_PLUGIN_NAME . ". " . esc_html_e( "All Rights Reserved.", "qts" ); ?> 
+                                                                                                                        &copy; <?php echo date('Y') ?>
+                                                                                                                        <?php echo QTS_PLUGIN_NAME . ". " . esc_html_e( "All Rights Reserved.", "qts" ); ?> 
                                                                                                                     </span>
                                                                                                                 </p>
                                                                                                             </div>
@@ -1328,7 +1329,7 @@ function qts_user_mail_form_ajax_submission() {
             
             $to      =  qts_user_mail_get_to();
 
-            $subject =  esc_html__( 'QTS Mail: ', 'qts' ) . $support_title;
+            $subject =  esc_html__( 'QTS Mail : ', 'qts' ) . $support_title;
 
             $support_type = qts_user_mail_get_templates_support_types( $support_type_options );
 
